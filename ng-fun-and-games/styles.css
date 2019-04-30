@@ -1,0 +1,30 @@
+.image {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 10px;
+}
+
+.image.small {
+     max-width: 180px;
+}
+
+.image.medium {
+     max-width: 300px;
+}
+
+#angular-intro {
+    position: absolute;
+    top: 10%;
+    left: 23%;
+}
+
+#monyet  {
+    position: absolute;
+    right: 30%;
+    bottom: -19%;
+}
+
+#celeste {
+    object-fit: none;
+    width: 420px;
+}
