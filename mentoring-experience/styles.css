@@ -37,3 +37,10 @@
 .pass-3 {
     transform: rotate(60deg) !important;
 }
+
+#athena {
+    position: fixed;
+    top: 80px;
+    right: 350px;
+    transform: rotate(20deg);
+}
