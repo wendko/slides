@@ -18,6 +18,7 @@
 <body>
     <div class="reveal">
         <div class="slides">
+
             <section id="introduction">
                 <h3>
                     Fun & Games with Angular
@@ -40,82 +41,231 @@
                 </h2>
             </section>
 
-            <section id="reason">
-                <section>
-                    Why make a game?
-                    <br>
-                    <img id="celeste" class="image" src="img/celeste.gif">
-                    <br>
-                    <small class="fragment mt-5">
-                        Because it's fun and I get to make the rules!
-                    </small>
-                </section>
-                <section>
-                    Why make an <u>Angular</u> game?
-                    <h1 class="mt-5">
-                        🤷🏻‍
-                    </h1>
-                </section>
+            <section id="reason-intro">
+                Why make a game in <u>Angular</u>?
+                <br><br>
+                <img id="celeste" class="image" src="img/celeste.gif">
+            </section>
 
-                <section>
-                    Why not...
+            <section id="reason-alternatives">
+                Why not...
+                <br>
+                <div>
+                    <img class="fragment image small p-2 m-3" src="img/phaser.png">
+                    <img class="fragment image small p-2 m-3" src="img/pixijs.svg">
+                    <img class="fragment image small p-2 m-3" src="img/aframe.png">
                     <br>
-                    <div class="fragment">
-                        <img class="image small p-2 m-3" src="img/phaser.png">
-                        <img class="image small p-2 m-3" src="img/pixijs.svg">
-                        <img class="image small p-2 m-3" src="img/aframe.png">
-                        <br>
-                        <img class="image small p-2 m-3" src="img/unreal.png">
-                        <img class="image small p-2 m-3" src="img/unity.png">
-                        <img class="image small p-2 m-3" src="img/threejs.png">
-                        <br>
-                        <img class="image medium" src="img/html-css-js.jpg">
-                    </div>
-                </section>
+                    <img class="fragment image small p-2 m-3" src="img/unreal.png">
+                    <img class="fragment image small p-2 m-3" src="img/unity.png">
+                    <img class="fragment image small p-2 m-3" src="img/threejs.png">
+                    <br>
+                    <img class="fragment image medium" src="img/html-css-js.jpg">
+                </div>
+            </section>
 
-                <section>
+            <section id="reason-personal">
+                <div class="mb-5">
                     Because
-                    <br>
-                    <div class="fragment">
-                        <img class="image small pr-3" src="img/angular.png">
-                        I'm already familiar with Angular
-                    </div>
-                    <div class="fragment">
-                        &
-                    </div>
-                    <div class="fragment">
-                        I want to trick myself to learn RxJS
-                        <img class="image small pl-5" src="img/rxjs.png">
-                    </div>
-                </section>
+                </div>
+                <div class="mb-4">
+                    1. It's a fun challenge 👾
+                    <small>(I get to make the rules!)</small>
+                </div>
+                <div>
+                    2. I'm already familiar with Angular
+                    <img class="image pl-3" width="100" src="img/angular.png">
+                </div>
+                <div>
+                    3. Learn RxJS
+                    <img class="image small pl-3" width="100" src="img/rxjs.png">
+                </div>
             </section>
 
             <section id="rxjs">
-                WIP: What is RxJS
-                <!-- And why does learning games help me to understand it
-                put the website here for ref -->
+                <img class="image small pl-5" src="img/rxjs.png">
+                <div><strong>RxJS</strong></div>
+                <div>Reactive Extensions for JavaScript</div>
+                <br>
+                <p>
+                    <a href="http://learnrxjs.io/">http://learnrxjs.io/</a> has some interesting use cases
+                </p>
             </section>
 
-
-            <section id="examples">
-                WIP: Here are some examples of Angular games by others
-                <!-- Analysis - how did they do it. Did they use RxJS? -->
+            <section id="learnrxjs" data-background-iframe="https://www.learnrxjs.io/recipes/">
             </section>
 
-            <section id="game-explanation">
-                WIP: Here's the under-the-hood of my game
+            <section id="learnrxjs_example"
+                data-background-iframe="https://stackblitz.com/edit/rxjs-car-racing?file=index.html">
             </section>
+
 
             <section id="game-demo">
-                WIP: Here is the demo!
+                Demo
+                <br>
+                <small>Note to organizers (6 June): Yes it's still buggy.
+                    <br>Don't worry, it's not finalized yet!
+                    <br>Will fix the bugs before ng-my
+                </small>
             </section>
 
-            <section id="resources">
-                WIP: Here are the resources to learn from!
+            <section data-background-iframe="https://wendko.github.io/rxjs-playground/dist/rxjs-playground/index.html">
+            </section>
+
+
+            <section id="game-explanation">
+                Walkthrough
+                <br>
+                <small>Also, the 3 ways that RxJS operators helped</small>
+                <br>
+                <img class="image pl-5" width="700" src="img/demo_screenshot.png">
+            </section>
+
+            <section id="game-explanation-timer">
+                <div class="mt-5">
+                    1. Setting up the timer
+                </div>
+                <section>
+                    Update the display every second
+                    <pre>
+                        <code>
+    <mark>interval</mark>(1000)
+    .subscribe(() => this.gameDurationInSeconds--)
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    Update until the game ends
+                    <pre>
+                        <code>
+    const gameEnds =<mark>timer</mark>(this.gameDurationInSeconds * 1000);
+
+    interval(1000)
+    <mark>.pipe</mark>(<mark>takeUntil</mark>(gameEnds))
+    .subscribe(() => this.gameDurationInSeconds--)
+                        </code>
+                    </pre>
+                </section>
+            </section>
+
+            <section id="game-explanation-behavior">
+                <div class="mt-3">
+                    2. Spawning items and tracking game progress
+                </div>
+                <section>
+                    <pre>
+                        <code>
+    this.queueItemsAndOrder();
+
+    this.foodService.timeKeeper(false, 500)
+    .<mark>pipe</mark>(<mark>finalize</mark>(this.gameOver.bind(this)))
+    .subscribe(() => {
+        this.spawnItem();
+    });
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    Spawning items
+                    <pre>
+                        <code data-trim data-noescape>
+    spawnItem(): void {
+        ...
+        this.items.push({ positionX, ...queuedItem });
+    }
+
+
+    &lt;div *ngFor=&quot;let item of items&quot;&gt;
+        &lt;app-item
+        [name]=&quot;item.name&quot;
+        [type]=&quot;item.type&quot;
+        [positionX]=&quot;item.positionX&quot;&gt;
+        &lt;/app-item&gt;
+    &lt;/div&gt;
+</code>
+                    </pre>
+                </section>
+
+                <section>
+                    Game over cleanup
+                    <pre>
+                        <code>
+    gameOver() {
+        this.showGameOver = true;
+        this.items = [];
+    }
+                        </code>
+                    </pre>
+                </section>
+            </section>
+
+            <section id="game-explanation-behavior">
+                <div class="mt-5">
+                    3. Setting up item behavior
+                </div>
+                <section>
+                    Click events
+                    <pre>
+                        <code>
+    const clicked = <mark>fromEvent</mark>(
+    this.itemComponent.nativeElement, 'click');
+
+    this.foodService.timeKeeper(false, this.movementInterval)
+    .pipe(
+        <mark>takeUntil(clicked)</mark>,
+        <mark>finalize</mark>(() => { this.clickedItem(); }))
+    .subscribe(this.descending.bind(this));
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    On click behavior
+                    <pre>
+                        <code>
+clickedItem() {
+    this.clicked = true;
+    const orderFulfilled = this.foodService.checkOrder(this.name);
+    this.addScore = orderFulfilled ? true : false;
+    this.scoreText = this.getScoreText();
+    this.itemComponent.nativeElement.classList.add('clicked');
+}
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    Descending behavior
+                    <pre>
+                        <code>
+descending() {
+    if (this.positionY <= this.maxHeight) {
+      this.positionY += this.movementYUnit;
+      this.positionStyle.top = this.positionY + 'vh';
+    } else {
+      this.removeFromDisplay();
+    }
+}
+                        </code>
+                    </pre>
+                </section>
+            </section>
+
+            <section id="takeaways">
+                <div class="mb-2">
+                    Takeaways
+                </div>
+                <br>
+                <ul>
+                    <li>RxJS subscriptions can stand-in for event listeners</li>
+                    <li>Can specify a condition for a subscription to stop & do post-processing</li>
+                    <li>Multiple components can share the same subscription</li>
+                    <li>Angular directives makes it easy to render components</li>
+                </ul>
             </section>
 
             <section id="end">
-                The end! Thank you!
+                Thank you!
+                <br>
+                <img class="image" src="https://media.tenor.com/images/d7ff43c4bad2da81dca001a9e5006273/tenor.gif">
             </section>
 
         </div>

@@ -8,6 +8,10 @@
      max-width: 180px;
 }
 
+.image-xs {
+     max-width: 180px;
+}
+
 .image.medium {
      max-width: 300px;
 }
