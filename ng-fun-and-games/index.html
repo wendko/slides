@@ -36,19 +36,15 @@
                 <br>
             </section>
 
-            <!-- <img id="celeste" class="image" src="img/celeste.gif"> -->
-
             <section id="reason-alternatives">
                 Why <u>Angular</u> instead of...
                 <br>
                 <div class="fragment">
                     <img class="image small p-2 m-3" src="img/phaser.png">
                     <img class="image small p-2 m-3" src="img/pixijs.svg">
-                    <!-- <img class="image small p-2 m-3" src="img/aframe.png"> -->
                     <img class="image small p-2 m-3" src="img/unreal.png">
                     <br>
                     <img class="image small p-2 m-3" src="img/unity.png">
-                    <!-- <img class="image small p-2 m-3" src="img/threejs.png"> -->
                     <img class="image medium" src="img/html-css-js.jpg">
                     <br>
                 </div>
@@ -67,12 +63,6 @@
                     <img class="image small pl-3" width="100" src="img/rxjs.png">
                 </div>
 
-                <!-- <small>(I get to make the rules!)</small> -->
-                <!-- <div class="mb-4">
-                    <img id="celeste" class="image" src="img/celeste.gif">
-
-                    1. It's a fun challenge 👾
-                </div> -->
             </section>
 
             <section id="rxjs-streams">
@@ -467,138 +457,7 @@
                     </div>
                 </section>
 
-
             </section>
-
-            <!-- <section id="game-explanation-timer">
-                <div class="mt-5">
-                    1. Setting up the timer
-                </div>
-                <section>
-                    Update the display every second
-                    <pre>
-                        <code>
-    <mark>interval</mark>(1000)
-    .subscribe(() => this.gameDurationInSeconds--)
-                        </code>
-                    </pre>
-                </section>
-                <section>
-                    Update until the game ends
-                    <pre>
-                        <code>
-    const gameEnds =<mark>timer</mark>(this.gameDurationInSeconds * 1000);
-
-    interval(1000)
-    <mark>.pipe</mark>(<mark>takeUntil</mark>(gameEnds))
-    .subscribe(() => this.gameDurationInSeconds--)
-                        </code>
-                    </pre>
-                </section>
-            </section>
-
-            <section id="game-explanation-behavior">
-                <div class="mt-3">
-                    2. Spawning items and tracking game progress
-                </div>
-                <section>
-                    <pre>
-                        <code>
-    this.queueItemsAndOrder();
-
-    this.foodService.timeKeeper(false, 500)
-    .<mark>pipe</mark>(<mark>finalize</mark>(this.gameOver.bind(this)))
-    .subscribe(() => {
-        this.spawnItem();
-    });
-                        </code>
-                    </pre>
-                </section>
-
-                <section>
-                    Spawning items
-                    <pre>
-                        <code data-trim data-noescape>
-    spawnItem(): void {
-        ...
-        this.items.push({ positionX, ...queuedItem });
-    }
-
-
-    &lt;div *ngFor=&quot;let item of items&quot;&gt;
-        &lt;app-item
-        [name]=&quot;item.name&quot;
-        [type]=&quot;item.type&quot;
-        [positionX]=&quot;item.positionX&quot;&gt;
-        &lt;/app-item&gt;
-    &lt;/div&gt;
-</code>
-                    </pre>
-                </section>
-
-                <section>
-                    Game over cleanup
-                    <pre>
-                        <code>
-    gameOver() {
-        this.showGameOver = true;
-        this.items = [];
-    }
-                        </code>
-                    </pre>
-                </section>
-            </section>
-
-            <section id="game-explanation-behavior">
-                <div class="mt-5">
-                    3. Setting up item behavior
-                </div>
-                <section>
-                    Click events
-                    <pre>
-                        <code>
-    const clicked = <mark>fromEvent</mark>(
-    this.itemComponent.nativeElement, 'click');
-
-    this.foodService.timeKeeper(false, this.movementInterval)
-    .pipe(
-        <mark>takeUntil(clicked)</mark>,
-        <mark>finalize</mark>(() => { this.clickedItem(); }))
-    .subscribe(this.descending.bind(this));
-                        </code>
-                    </pre>
-                </section>
-                <section>
-                    On click behavior
-                    <pre>
-                        <code>
-clickedItem() {
-    this.clicked = true;
-    const orderFulfilled = this.foodService.checkOrder(this.name);
-    this.addScore = orderFulfilled ? true : false;
-    this.scoreText = this.getScoreText();
-    this.itemComponent.nativeElement.classList.add('clicked');
-}
-                        </code>
-                    </pre>
-                </section>
-                <section>
-                    Descending behavior
-                    <pre>
-                        <code>
-descending() {
-    if (this.positionY <= this.maxHeight) {
-      this.positionY += this.movementYUnit;
-      this.positionStyle.top = this.positionY + 'vh';
-    } else {
-      this.removeFromDisplay();
-    }
-}
-                        </code>
-                    </pre>
-                </section>
-            </section> -->
-
             <section id="takeaways">
                 <div class="mb-2">
                     Takeaways
