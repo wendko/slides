@@ -26,101 +26,259 @@
                 <img class="image" src="img/video-games.gif">
                 <img id="angular-intro" class="image" src="img/angular.png">
                 <br>
-                Wendy Kong
-                <br>
                 <small>
-                    Software Engineer @ Pulsifi
+                    Wendy Kong
                     <br>
-                    Lead @ Women Who Code KL
+                    Software Engineer, Pulsifi
                     <br>
-                    Code Monyet
+                    Lead, Women Who Code KL
                 </small>
                 <br>
-                <h2>
-                    🐒
-                </h2>
             </section>
 
-            <section id="reason-intro">
-                Why make a game in <u>Angular</u>?
-                <br><br>
-                <img id="celeste" class="image" src="img/celeste.gif">
-            </section>
+            <!-- <img id="celeste" class="image" src="img/celeste.gif"> -->
 
             <section id="reason-alternatives">
-                Why not...
+                Why <u>Angular</u> instead of...
                 <br>
-                <div>
-                    <img class="fragment image small p-2 m-3" src="img/phaser.png">
-                    <img class="fragment image small p-2 m-3" src="img/pixijs.svg">
-                    <img class="fragment image small p-2 m-3" src="img/aframe.png">
+                <div class="fragment">
+                    <img class="image small p-2 m-3" src="img/phaser.png">
+                    <img class="image small p-2 m-3" src="img/pixijs.svg">
+                    <!-- <img class="image small p-2 m-3" src="img/aframe.png"> -->
+                    <img class="image small p-2 m-3" src="img/unreal.png">
                     <br>
-                    <img class="fragment image small p-2 m-3" src="img/unreal.png">
-                    <img class="fragment image small p-2 m-3" src="img/unity.png">
-                    <img class="fragment image small p-2 m-3" src="img/threejs.png">
+                    <img class="image small p-2 m-3" src="img/unity.png">
+                    <!-- <img class="image small p-2 m-3" src="img/threejs.png"> -->
+                    <img class="image medium" src="img/html-css-js.jpg">
                     <br>
-                    <img class="fragment image medium" src="img/html-css-js.jpg">
                 </div>
             </section>
 
             <section id="reason-personal">
                 <div class="mb-5">
-                    Because
-                </div>
-                <div class="mb-4">
-                    1. It's a fun challenge 👾
-                    <small>(I get to make the rules!)</small>
+                    Reason
                 </div>
                 <div>
-                    2. I'm already familiar with Angular
+                    1. Because I can <span style="font-size:0.6em">(I think!!)</span>
                     <img class="image pl-3" width="100" src="img/angular.png">
                 </div>
                 <div>
-                    3. Learn RxJS
+                    2. To learn RxJS
                     <img class="image small pl-3" width="100" src="img/rxjs.png">
+                </div>
+
+                <!-- <small>(I get to make the rules!)</small> -->
+                <!-- <div class="mb-4">
+                    <img id="celeste" class="image" src="img/celeste.gif">
+
+                    1. It's a fun challenge 👾
+                </div> -->
+            </section>
+
+            <section id="rxjs-streams">
+                Games = streams
+                <br>
+                <img class="image" src="img/space-invaders.gif">
+                <br>
+
+                <small class="fragment fade-in">Obstacles,</small>
+                <small class="fragment fade-in">Player,</small>
+                <small class="fragment fade-in">Score,</small>
+                <small class="fragment fade-in">Collision,</small>
+                <small class="fragment fade-in">..........</small>
+
+                <div class="row justify-content-center mt-3">
+                    <span class="fragment fade-in pr-5">
+                        <img class="image small pl-5" src="img/rxjs.png">
+                    </span>
+                    <div class="speech-bubble fragment fade-in"><small>Hey, I can help!</small></div>
                 </div>
             </section>
 
-            <section id="rxjs">
-                <img class="image small pl-5" src="img/rxjs.png">
-                <div><strong>RxJS</strong></div>
-                <div>Reactive Extensions for JavaScript</div>
+            <section id="learnrxjs-reference">
+                Reference: <a href="http://learnrxjs.io/">http://learnrxjs.io/</a>
                 <br>
-                <p>
-                    <a href="http://learnrxjs.io/">http://learnrxjs.io/</a> has some interesting use cases
-                </p>
+                <img class="image medium" src="img/rxjs-recipes.png">
             </section>
 
-            <section id="learnrxjs" data-background-iframe="https://www.learnrxjs.io/recipes/">
-            </section>
-
-            <section id="learnrxjs_example"
+            <section id="learnrxjs-example"
                 data-background-iframe="https://stackblitz.com/edit/rxjs-car-racing?file=index.html">
             </section>
 
-
-            <section id="game-demo">
+            <section id="demo-text">
                 Demo
-                <br>
-                <small>Note to organizers (6 June): Yes it's still buggy.
-                    <br>Don't worry, it's not finalized yet!
-                    <br>Will fix the bugs before ng-my
-                </small>
             </section>
 
-            <section data-background-iframe="https://wendko.github.io/rxjs-playground/dist/rxjs-playground/index.html">
+            <section id="demo"
+                data-background-iframe="https://wendko.github.io/rxjs-playground/dist/rxjs-playground/index.html">
             </section>
-
 
             <section id="game-explanation">
                 Walkthrough
-                <br>
-                <small>Also, the 3 ways that RxJS operators helped</small>
-                <br>
-                <img class="image pl-5" width="700" src="img/demo_screenshot.png">
+                <!-- <br> -->
+                <!-- <small>Also, the 3 ways that RxJS operators helped</small> -->
+                <!-- <br> -->
+                <!-- <img class="image pl-5" width="700" src="img/demo_screenshot.png"> -->
             </section>
 
-            <section id="game-explanation-timer">
+            <section id="walkthrough-used-rxjs">
+                <code>import from 'rxjs'</code>
+                <br>
+                <small class="mr-3">Observable</small>
+                <small class="mr-3">ReplaySubject</small>
+                <small class="mr-3">interval</small>
+                <small class="mr-3">timer</small>
+                <br>
+                <code>import from 'rxjs/operators'</code>
+                <br>
+                <small class="mr-3">delay</small>
+                <small class="mr-3">finalize</small>
+                <small class="mr-3">fromEvent</small>
+                <small class="mr-3">takeUntil</small>
+                <small class="mr-3">tap</small>
+            </section>
+
+            <section id="walkthrough-stream-food">
+                <div class="mt-4">
+                    1. A stream of food
+                </div>
+                <small>Yum yum</small>
+                <br>
+                <section>
+                    <div class="row">
+                        <div class="col-4">
+                            <video height="400" loop="true" controls autoplay="autoplay" src="img/food-stream.mov"
+                                type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="col-8">
+                            <pre>
+                                <code style="font-size:20px;display:inline">
+    const spawning$ =
+    this.foodService.timeKeeper(true).pipe(
+        <mark>tap</mark>(this.spawnItem.bind(this)),
+        <mark>takeUntil</mark>(
+            this.foodService.timeRunsOut()),
+        <mark>takeUntil</mark>(
+            this.foodService.gameWonSubject),
+        <mark>finalize</mark>(() => {
+            this.showGameOver = true;
+            this.items = [];
+        }),
+    );
+
+    spawning$.subscribe();
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="row">
+                        <div class="col-4">
+                            <video height="400" loop="true" controls autoplay="autoplay" src="img/food-stream.mov"
+                                type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="col-8">
+                            <pre>
+                                <code style="font-size:18px;display:inline">
+  spawnItem(): void {
+      const positionX = //...randomize;
+      const queuedItem = this.queuedItems.pop();
+      if (!queuedItem) {
+          return;
+      }
+      this.items.push({ positionX, ...queuedItem });
+  }
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="row">
+                        <div class="col-4">
+                            <video height="400" loop="true" controls autoplay="autoplay" src="img/food-stream.mov"
+                                type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="col-8">
+                            <pre>
+                                <code style="font-size:18px;display:inline">
+    const descending$ =
+    this.foodService.timeKeeper(
+        false, this.movementInterval)
+        .pipe(
+            <mark>takeUntil</mark>(
+                this.clickedEvent),
+            <mark>takeUntil</mark>(
+                this.foodService.timeRunsOut()),
+            <mark>tap</mark>(this.descending.bind(this)),
+        );
+    descending$.subscribe();
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="row">
+                        <div class="col-4">
+                            <video height="400" loop="true" controls autoplay="autoplay" src="img/food-stream.mov"
+                                type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="col-8">
+                            <pre>
+                                <code style="font-size:18px;display:inline">
+    descending() {
+        if (this.positionY <= this.maxHeight) {
+            this.positionY += this.movementYUnit;
+            this.<mark>positionStyle</mark>.top =
+                this.positionY+ 'vh';
+        } else {
+            this.removeFromDisplay();
+        }
+    }
+
+
+  &lt;div [ngStyle]=&quot;positionStyle&quot;&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+            <section id="walkthrough-descending">
+                <img class="image small" src="img/corn.png" id="corn">
+                <div id="cornText"></div>
+                <div id="lameJoke"></div>
+            </section>
+
+            <section id="walkthrough-stream-click">
+                2. Click events
+                <br>
+                <small>remove from view and update scores/orders</small>
+                <br>
+                <video height="450" loop="true" controls autoplay="autoplay" src="img/click-stream.mov"
+                    type="video/mp4">
+                </video>
+            </section>
+
+            <section id="walkthrough-stream-timer">
+                3. Game over listeners
+                <br>
+                <small>To end the game when the timer is up or the game is won</small>
+                <br>
+                <video height="200" loop="true" controls autoplay="autoplay" src="img/timer-stream.mov"
+                    type="video/mp4">
+                </video>
+            </section>
+
+            <!-- <section id="game-explanation-timer">
                 <div class="mt-5">
                     1. Setting up the timer
                 </div>
@@ -247,7 +405,7 @@ descending() {
                         </code>
                     </pre>
                 </section>
-            </section>
+            </section> -->
 
             <section id="takeaways">
                 <div class="mb-2">
@@ -255,9 +413,10 @@ descending() {
                 </div>
                 <br>
                 <ul>
-                    <li>RxJS subscriptions can stand-in for event listeners</li>
-                    <li>Can specify a condition for a subscription to stop & do post-processing</li>
+                    <li>RxJS for creating and handling streams</li>
+                    <li>Communication between components</li>
                     <li>Multiple components can share the same subscription</li>
+                    <li>Specify a condition for a subscription to stop & do post-processing</li>
                     <li>Angular directives makes it easy to render components</li>
                 </ul>
             </section>

@@ -32,3 +32,81 @@
     object-fit: none;
     width: 420px;
 }
+
+.speech-bubble {
+    height:100px;
+    width: fit-content;
+    border-radius:100px;
+    background:rgb(255, 230, 234);
+    box-shadow: 5px 5px 0px 0px lightpink;
+    display: flex;
+    padding: 25px;
+}
+
+.speech-bubble>* {
+    margin:auto;
+}
+
+.speech-bubble:before {
+    content:"";
+    border: 30px solid;
+    position: absolute;
+    margin-left: -45px;
+    border-color: transparent transparent transparent rgb(255, 230, 234);
+    transform: rotate(60deg);
+}
+
+#corn {
+    position: relative;
+    top: 550px;
+    animation: descending 5s linear;
+}
+
+#cornText:after {
+    content: "";
+    top: -100px;
+    left: 200px;
+    position: fixed;
+    animation: cornText 5s linear;
+}
+
+#lameJoke:after {
+    content: "a condescending corn descending";
+    top:-200px;
+    position: relative;
+    animation: lameJoke 5s linear;
+}
+
+@keyframes cornText {
+    0% {
+        content: "";
+    }
+    50% {
+        content: "this is awful";
+    }
+    52%, 100% {
+        content: "";
+    }
+}
+
+@keyframes lameJoke {
+    0%,99% {
+        content: "";
+    }
+    100% {
+        content: "a condescending corn descending";
+    }
+}
+
+@keyframes descending {
+    0% {
+        top: -500px;
+    }
+    25%, 55% {
+        top: -200px;
+
+    }
+    100% {
+        top: 550px;
+    }
+}
