@@ -115,10 +115,6 @@
 
             <section id="game-explanation">
                 Walkthrough
-                <!-- <br> -->
-                <!-- <small>Also, the 3 ways that RxJS operators helped</small> -->
-                <!-- <br> -->
-                <!-- <img class="image pl-5" width="700" src="img/demo_screenshot.png"> -->
             </section>
 
             <section id="walkthrough-used-rxjs">
@@ -263,19 +259,215 @@
                 <br>
                 <small>remove from view and update scores/orders</small>
                 <br>
-                <video height="450" loop="true" controls autoplay="autoplay" src="img/click-stream.mov"
-                    type="video/mp4">
-                </video>
+
+
+                <section>
+                    <div class="row">
+                        <div class="col-4">
+                            <video height="450" loop="true" controls autoplay="autoplay" src="img/click-stream.mov"
+                                type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="col-8">
+                            <pre>
+                                <code style="font-size:18px;display:inline">
+    this.clickedEvent =
+        <mark>fromEvent</mark>(
+            this.itemComponent.nativeElement,
+            'click');
+    this.clickedEvent
+        .subscribe(this.<mark>clickedItem</mark>.bind(this));
+
+    clickedItem() {
+        // ...stuff
+        const orderFulfilled =
+            this.foodService.<mark>checkOrder</mark>(this.name);
+        // ...stuff
+    }
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section>
+                    <div class="row">
+                        <div class="col-4">
+                            <video height="450" loop="true" controls autoplay="autoplay" src="img/click-stream.mov"
+                                type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="col-8">
+                            <pre>
+                                <code style="font-size:16px;display:inline">
+  checkOrder(itemName: FoodName | DrinkName): boolean {
+      const <mark>currentOrder</mark> = this.getTopOrder();
+      const isOrderFound =
+          currentOrder.find(item =>
+              item.name === itemName && !item.<mark>done</mark>);
+      if (isOrderFound) {
+          this.<mark>updateOrder</mark>(foundOrder);
+          this.<mark>checkGameStatus()</mark>;
+          return true;
+      } else {
+          this.<mark>updateOrder()</mark>;
+          return false;
+      }
+  }
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section>
+                    <div class="row">
+                        <div class="col-4">
+                            <video height="450" loop="true" controls autoplay="autoplay" src="img/click-stream.mov"
+                                type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="col-8">
+                            <pre>
+                                <code style="font-size:15px;display:inline">
+   updateOrder(foundOrder: Item = null): void {
+       if (!foundOrder) {
+           <mark>this.score -= this.scoreUnit</mark>;
+           return;
+       }
+       foundOrder.<mark>done</mark> = true;
+       <mark>this.score += this.scoreUnit</mark>;
+
+       const orderFulfilled = this.orders[0].<mark>every</mark>(x => x.done);
+       if (orderFulfilled) {
+           this.<mark>ordersCompleted$</mark>.next(1);
+           <mark>this.orders.shift();</mark>
+           this.score += (this.scoreUnit * 2);
+       }
+   }
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section>
+                    <div class="row">
+                        <div class="col-4">
+                            <video height="450" loop="true" controls autoplay="autoplay" src="img/click-stream.mov"
+                                type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="col-8">
+                            <pre>
+                                <code style="font-size:15px;display:inline">
+  const singleOrderFulfilled$ =
+      this.foodService.ordersCompletedSubject.pipe(
+          tap(x => this.<mark>showOrderFulfilled</mark> = true)
+      );
+
+  <mark>singleOrderFulfilled$</mark>.subscribe();
+
+  &lt;div *ngIf=&quot;this.showOrderFulfilled&quot; class=&quot;font-temporary&quot;&gt;
+    Extra 2 points for completed order!
+  &lt;/div&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
             </section>
 
             <section id="walkthrough-stream-timer">
-                3. Game over listeners
-                <br>
+                <div class="mt-5">
+                    3. Game over listeners
+                </div>
                 <small>To end the game when the timer is up or the game is won</small>
                 <br>
-                <video height="200" loop="true" controls autoplay="autoplay" src="img/timer-stream.mov"
-                    type="video/mp4">
-                </video>
+
+                <section>
+                    <video height="200" loop="true" controls autoplay="autoplay" src="img/timer-stream.mov"
+                        type="video/mp4">
+                    </video>
+                </section>
+
+                <section>
+                    <div style="margin-top:120px">
+                        <pre>
+                                <code style="font-size:15px;display:inline">
+    const spawning$ =
+        this.foodService.timeKeeper(true).pipe(
+            tap(this.spawnItem.bind(this)),
+            takeUntil(this.foodService.<mark>timeRunsOut()</mark>),
+            takeUntil(this.foodService.<mark>gameWon$</mark>),
+            finalize(() => {
+                <mark>this.showGameOver = true</mark>;
+                this.items = [];
+            }),
+        );
+                                </code>
+                            </pre>
+                    </div>
+                </section>
+
+                <section>
+                    <small>
+                        Condition 1: game duration
+                    </small>
+                    <div>
+                        <pre>
+                                <code style="font-size:15px;display:inline">
+    public timeRunsOut(): Observable&lt;number&gt; {
+        return <mark>timer</mark>((this.gameDurationInSeconds + 3) * 1000);
+    }
+                                </code>
+                            </pre>
+                    </div>
+                </section>
+
+                <section>
+                    <small>
+                        Condition 2: game won
+                    </small>
+                    <div>
+                        <pre>
+                            <code style="font-size:15px;display:inline">
+    checkGameStatus(): void {
+        if (this.orders.length === 0) {
+            this.<mark>gameWon</mark> = true;
+            this.<mark>gameWon$</mark>.next(true);
+        }
+    }
+                            </code>
+                        </pre>
+                    </div>
+                </section>
+
+                <section>
+                    <div style="margin-top:120px">
+                        <pre>
+                                <code style="font-size:15px;display:inline">
+    &lt;div *ngIf=&quot;<mark>showGameOver</mark>&quot;&gt;
+        &lt;div *ngIf=&quot;!this.foodService.<mark>gameWon</mark>&quot; class=&quot;font-large&quot;&gt;
+            GAME OVER!
+        &lt;br&gt;
+     Your score is {{foodService.score}}.
+    &lt;/div&gt;
+        &lt;div *ngIf=&quot;this.foodService.<mark>gameWon</mark>&quot; class=&quot;font-large&quot;&gt;
+            YOU WON!
+        &lt;br&gt;
+    Your score is {{foodService.score}}.
+    &lt;/div&gt;
+                                </code>
+                            </pre>
+                    </div>
+                </section>
+
+
             </section>
 
             <!-- <section id="game-explanation-timer">
@@ -412,12 +604,12 @@ descending() {
                     Takeaways
                 </div>
                 <br>
-                <ul>
-                    <li>RxJS for creating and handling streams</li>
+                <ul style="font-size:25px; line-height: 2.5">
+                    <li>Creating and handling streams</li>
                     <li>Communication between components</li>
                     <li>Multiple components can share the same subscription</li>
                     <li>Specify a condition for a subscription to stop & do post-processing</li>
-                    <li>Angular directives makes it easy to render components</li>
+                    <li>Manipulating descent with Angular templates</li>
                 </ul>
             </section>
 
