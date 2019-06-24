@@ -108,7 +108,7 @@
                     Objectives
                 </div>
                 <div style="font-size:2.5rem">
-                    4) Click events should remove food from view and update scores/orders
+                    4) Respond to click events
                 </div>
                 <video height="400" loop="true" controls autoplay="autoplay" src="img/click-stream.mov"
                     type="video/mp4">
@@ -144,7 +144,7 @@
                         <div id="spawn-and-game-tracker-takeUntil-2"
                             style="top:255px;left:170px;width:410px;height:20px" class="code-highlight">
                         </div>
-                        <div class="description-text">take until timer runs out</div>
+                        <div class="description-text">keep the interval going until timer runs out</div>
                     </div>
                 </div>
 
@@ -153,7 +153,6 @@
                     class="code-block">
                 </iframe>
             </section>
-
 
             <section id="descending">
                 <div style="font-size:2.5rem">
@@ -239,7 +238,7 @@
                 </div>
 
                 <iframe style="margin-top:120px"
-                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=material&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=const%2520spawning%2524%2520%253D%2520this.foodService.timeKeeper(true)%250A%2520%2520%2520%2520.pipe(%250A%2520%2520%2520%2520%2520%2520tap(this.spawnItem.bind(this))%252C%250A%2520%2520%2520%2520%2520%2520takeUntil(%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.foodService.timeRunsOut())%252C%250A%2520%2520%2520%2520%2520%2520takeUntil(%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.foodService.gameWonSubject)%252C%250A%2520%2520%2520%2520%2520%2520finalize(()%2520%253D%253E%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.showGameOver%2520%253D%2520true%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.items%2520%253D%2520%255B%255D%253B%250A%2520%2520%2520%2520%2520%2520%257D)%252C%250A%2520%2520%2520%2520)%253B%250A%250Aspawning%2524.subscribe()"
+                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=material&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=const%2520spawning%2524%2520%253D%2520this.foodService.timeKeeper(true)%250A%2520%2520%2520%2520.pipe(%250A%2520%2520%2520%2520%2520%2520tap(this.spawnItem.bind(this))%252C%250A%2520%2520%2520%2520%2520%2520takeUntil(%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.foodService.timeRunsOut())%252C%250A%2520%2520%2520%2520%2520%2520takeUntil(%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.foodService.gameWon$)%252C%250A%2520%2520%2520%2520%2520%2520finalize(()%2520%253D%253E%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.showGameOver%2520%253D%2520true%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.items%2520%253D%2520%255B%255D%253B%250A%2520%2520%2520%2520%2520%2520%257D)%252C%250A%2520%2520%2520%2520)%253B%250A%250Aspawning%2524.subscribe()"
                     class="code-block">
                 </iframe>
             </section>
@@ -247,12 +246,12 @@
 
             <section id="click-event">
                 <div style="font-size:2.5rem">
-                    4) Click events should remove food from view and update scores/orders
+                    4) Respond to click events
                 </div>
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div style="top:245px;left:320px;width:500px;height:25px" class="code-highlight">
+                        <div style="top:195px;left:320px;width:500px;height:25px" class="code-highlight">
                         </div>
                         <div class="description-text">streaming click events</div>
                     </div>
@@ -260,7 +259,7 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div style="top:345px;left:170px;width:520px;height:45px" class="code-highlight">
+                        <div style="top:295px;left:170px;width:520px;height:45px" class="code-highlight">
                         </div>
                         <div class="description-text">checking orders each time</div>
                     </div>
@@ -289,9 +288,19 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div style="top:425px;left:230px;width:330px;height:45px" class="code-highlight">
+                        <div style="top:345px;left:225px;width:230px;height:25px" class="code-highlight">
                         </div>
-                        <div class="description-text">updating the orders</div>
+                        <div class="description-text">updating the order</div>
+                    </div>
+                </div>
+
+                <div class="fragment fade-in">
+                    <div class="fragment fade-out">
+                        <div style="top:405px;left:220px;width:550px;height:25px" class="code-highlight">
+                        </div>
+                        <div style="top:445px;left:260px;width:300px;height:25px" class="code-highlight">
+                        </div>
+                        <div class="description-text">check if all orders are completed</div>
                     </div>
                 </div>
 
