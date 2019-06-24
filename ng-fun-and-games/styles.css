@@ -142,12 +142,12 @@ h3 {
 }
 
 .description-text {
-    left: 0px;
+    bottom: 70px;
     position: fixed;
-    width: min-content;
     justify-content: center;
     display: flex;
     background: linear-gradient(pink, lightyellow);
     border-radius: 20px;
     padding: 10px;
+    left: 28%;
 }
