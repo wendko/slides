@@ -1,3 +1,7 @@
+h3 {
+    font-family: 'Roboto Slab', serif;
+}
+
 .image {
     border: none !important;
     box-shadow: none !important;
@@ -109,4 +113,41 @@
     100% {
         top: 550px;
     }
+}
+
+.heart {
+    animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(0.5);
+    }
+    30% {
+        transform: scale(1);
+    }
+}
+
+.code-block {
+    width:1024px; height:473px; border:0; overflow:hidden;
+    transform: scale(1.2)
+}
+
+.code-highlight {
+    border: 1px dashed yellow;
+    position: fixed;
+    z-index:1;
+    height:20px;
+    border-radius:10px;
+}
+
+.description-text {
+    left: 0px;
+    position: fixed;
+    width: min-content;
+    justify-content: center;
+    display: flex;
+    background: linear-gradient(pink, lightyellow);
+    border-radius: 20px;
+    padding: 10px;
 }
