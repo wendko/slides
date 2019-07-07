@@ -26,7 +26,7 @@
                     Fun & Games with Angular
                 </h3>
                 <img class="image" src="img/video-games.gif">
-                <img id="angular-intro" class="image" src="img/angular.png">
+                <img id="angularIntro" class="image" src="img/angular.png">
                 <br>
                 <small>
                     Wendy Kong
@@ -38,9 +38,8 @@
                 <br>
             </section>
 
-            <section id="demo"
-                data-background-iframe="https://wendko.github.io/rxjs-playground/dist/rxjs-playground/index.html">
-            </section>
+            <!-- <section id="demo" data-background-iframe="https://rxjs-playground.netlify.com">
+            </section> -->
 
             <section id="made-with">
                 <p>Made with</p>
@@ -123,8 +122,10 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div id="spawn-and-game-tracker-takeUntil-2"
-                            style="top:215px;left:370px;width:230px;height:20px" class="code-highlight">
+                        <div id="spawn-and-game-tracker-takeUntil-2" style="top: 172px;
+                            left: 310px;
+                            width: 360px;
+                            height: 30px;" class="code-highlight">
                         </div>
                         <div class="description-text">emit a value for every time interval</div>
                     </div>
@@ -132,8 +133,10 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div id="spawn-and-game-tracker-takeUntil-2"
-                            style="top:235px;left:360px;width:450px;height:20px" class="code-highlight">
+                        <div id="spawn-and-game-tracker-takeUntil-2" style="top: 200px;
+                            left: 300px;
+                            width: 700px;
+                            height: 40px;" class="code-highlight">
                         </div>
                         <div class="description-text">have a timer countdown</div>
                     </div>
@@ -141,15 +144,18 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div id="spawn-and-game-tracker-takeUntil-2"
-                            style="top:255px;left:170px;width:410px;height:20px" class="code-highlight">
+                        <div id="spawn-and-game-tracker-takeUntil-2" style="top: 235px;
+                            left: 0px;
+                            width: 650px;
+                            height: 30px;" class="code-highlight">
                         </div>
                         <div class="description-text">keep the interval going until timer runs out</div>
                     </div>
                 </div>
 
+
                 <iframe style="margin-top:120px"
-                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=night-owl&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=%2520public%2520timeKeeper(intervalUnit%253A%2520number%2520%253D%25201000)%253A%2520Observable%253Cnumber%253E%2520%257B%250A%2520%2520%2520%2520const%2520timeInterval%2520%253D%2520interval(intervalUnit)%253B%250A%2520%2520%2520%2520const%2520timeRunsOut%2520%253D%2520timer((this.gameDurationInSeconds%2520%252B%25203)%2520*%25201000)%253B%250A%2520%2520%2520%2520timeInterval.pipe(takeUntil(timeRunsOut))%253B%250A%2520%257D"
+                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=night-owl&wt=none&l=javascript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=18px&lh=133%25&si=false&es=4x&wm=false&code=%2520public%2520timeKeeper(intervalUnit%253A%2520number%2520%253D%25201000)%253A%2520Observable%253Cnumber%253E%2520%257B%250A%2520%2520%2520%2520const%2520timeInterval%2520%253D%2520interval(intervalUnit)%253B%250A%2520%2520%2520%2520const%2520timeRunsOut%2520%253D%2520timer((this.gameDurationInSeconds)%2520*%25201000)%253B%250A%2520%2520%2520%2520timeInterval.pipe(takeUntil(timeRunsOut))%253B%250A%2520%257D"
                     class="code-block">
                 </iframe>
             </section>
@@ -161,40 +167,47 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div id="spawn-and-game-tracker-takeUntil-2"
-                            style="top:295px;left:290px;width:330px;height:20px" class="code-highlight">
+                        <div id="spawn-and-game-tracker-takeUntil-2" style="top: 265px;
+                            left: 250px;
+                            width: 390px;
+                            height: 25px;" class="code-highlight">
                         </div>
                         <div class="description-text">change the y position of a single item</div>
                     </div>
                 </div>
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div id="spawn-and-game-tracker-takeUntil-2"
-                            style="top:255px;left:290px;width:290px;height:20px" class="code-highlight">
+                        <div id="spawn-and-game-tracker-takeUntil-2" style="top: 215px;
+                            left: 250px;
+                            width: 350px;
+                            height: 25px;" class="code-highlight">
                         </div>
                         <div class="description-text">until it gets clicked on</div>
                     </div>
                 </div>
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div id="spawn-and-game-tracker-takeUntil-2"
-                            style="top:275px;left:290px;width:410px;height:20px" class="code-highlight">
+                        <div id="spawn-and-game-tracker-takeUntil-2" style="top: 235px;
+                            left: 250px;
+                            width: 510px;
+                            height: 25px;
+                        " class="code-highlight">
                         </div>
                         <div class="description-text">...or until the game ends</div>
                     </div>
                 </div>
 
                 <iframe style="margin-top:120px"
-                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=one-dark&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=const%2520descending%2524%2520%253D%250A%2520%2520%2520%2520this.foodService.timeKeeper(false%252C%2520this.movementInterval)%250A%2520%2520%2520%2520%2520%2520%2520%2520.pipe(%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520takeUntil(this.clickedEvent)%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520takeUntil(this.foodService.timeRunsOut())%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520tap(this.descending.bind(this))%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520)%253B%250Adescending%2524.subscribe()"
+                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=night-owl&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=const%2520descending%2524%2520%253D%250A%2520%2520%2520%2520this.foodService.timeKeeper(false%252C%2520this.movementInterval)%250A%2520%2520%2520%2520%2520%2520%2520%2520.pipe(%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520takeUntil(this.clickedEvent)%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520takeUntil(this.foodService.timeRunsOut())%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520tap(this.descending.bind(this))%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520)%253B%250Adescending%2524.subscribe()"
                     class="code-block">
                 </iframe>
             </section>
 
-            <!-- <section id="corny-joke">
-                                <img class="image small" src="img/corn.png" id="corn">
-                                <div id="cornText"></div>
-                                <div id="lameJoke"></div>
-                            </section> -->
+            <section id="corny-joke">
+                <img class="image small" src="img/corn.png" id="corn">
+                <div id="cornText"></div>
+                <div id="lameJoke"></div>
+            </section>
 
 
             <section id="spawn-and-game-tracker">
@@ -204,8 +217,11 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div id="spawn-and-game-tracker-tap" style="top:235px;left:280px;width:320px;height:20px"
-                            class="code-highlight">
+                        <div id="spawn-and-game-tracker-tap" style="top: 190px;
+                        left: 290px;
+                        width: 300px;
+                        height: 25px;
+                    }" class="code-highlight">
                         </div>
                         <div class="description-text">creates a random item</div>
                     </div>
@@ -213,7 +229,10 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div style="top:255px;left:280px;width:380px;height:40px" class="code-highlight">
+                        <div style="top: 235px;
+                        left: 280px;
+                        width: 380px;
+                        height: 30px;" class="code-highlight">
                         </div>
                         <div class="description-text">keep spawning until time runs out</div>
                     </div>
@@ -221,24 +240,28 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div id="spawn-and-game-tracker-takeUntil-2"
-                            style="top:295px;left:280px;width:380px;height:40px" class="code-highlight">
+                        <div id="spawn-and-game-tracker-takeUntil-2" style="top: 285px;
+                            left: 280px;
+                            width: 340px;
+                            height: 30px;" class="code-highlight">
                         </div>
-                        <div class="description-text">...or until the game ends</div>
+                        <div class="description-text">...or until the game is won</div>
                     </div>
                 </div>
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div id="spawn-and-game-tracker-takeUntil-2"
-                            style="top:335px;left:280px;width:380px;height:80px" class="code-highlight">
+                        <div id="spawn-and-game-tracker-takeUntil-2" style="top: 335px;
+                            left: 280px;
+                            width: 340px;
+                            height: 60px;" class="code-highlight">
                         </div>
                         <div class="description-text">game over clean up</div>
                     </div>
                 </div>
 
                 <iframe style="margin-top:120px"
-                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=material&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=const%2520spawning%2524%2520%253D%2520this.foodService.timeKeeper(true)%250A%2520%2520%2520%2520.pipe(%250A%2520%2520%2520%2520%2520%2520tap(this.spawnItem.bind(this))%252C%250A%2520%2520%2520%2520%2520%2520takeUntil(%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.foodService.timeRunsOut())%252C%250A%2520%2520%2520%2520%2520%2520takeUntil(%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.foodService.gameWon$)%252C%250A%2520%2520%2520%2520%2520%2520finalize(()%2520%253D%253E%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.showGameOver%2520%253D%2520true%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.items%2520%253D%2520%255B%255D%253B%250A%2520%2520%2520%2520%2520%2520%257D)%252C%250A%2520%2520%2520%2520)%253B%250A%250Aspawning%2524.subscribe()"
+                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=night-owl&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=const%2520spawning%2524%2520%253D%2520this.foodService.timeKeeper(true)%250A%2520%2520%2520%2520.pipe(%250A%2520%2520%2520%2520%2520%2520tap(this.spawnItem.bind(this))%252C%250A%2520%2520%2520%2520%2520%2520takeUntil(%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.foodService.timeRunsOut())%252C%250A%2520%2520%2520%2520%2520%2520takeUntil(%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.foodService.gameWon$)%252C%250A%2520%2520%2520%2520%2520%2520finalize(()%2520%253D%253E%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.showGameOver%2520%253D%2520true%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520this.items%2520%253D%2520%255B%255D%253B%250A%2520%2520%2520%2520%2520%2520%257D)%252C%250A%2520%2520%2520%2520)%253B%250A%250Aspawning%2524.subscribe()"
                     class="code-block">
                 </iframe>
             </section>
@@ -251,7 +274,10 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div style="top:195px;left:320px;width:500px;height:25px" class="code-highlight">
+                        <div style="top: 135px;
+                        left: 280px;
+                        width: 620px;
+                        height: 30px;" class="code-highlight">
                         </div>
                         <div class="description-text">streaming click events</div>
                     </div>
@@ -259,28 +285,37 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div style="top:295px;left:170px;width:520px;height:45px" class="code-highlight">
+                        <div style="top: 285px;
+                        left: 140px;
+                        width: 600px;
+                        height: 30px;" class="code-highlight">
                         </div>
                         <div class="description-text">checking orders each time</div>
                     </div>
                 </div>
 
                 <iframe style="margin-top:120px"
-                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=one-dark&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=this.clickedEvent%2520%253D%2520fromEvent(this.itemComponent.nativeElement%252C'click')%253B%250Athis.clickedEvent.subscribe(this.clickedItem.bind(this))%253B%250A%250AclickedItem()%2520%257B%250A%2520%2520%2520%2520%252F%252F%2520...%250A%2520%2520%2520%2520const%2520orderFulfilled%2520%253D%250A%2520%2520%2520%2520%2520%2520%2520%2520this.foodService.checkIsOrderFulfilled(this.name)%253B%250A%2520%2520%2520%2520%252F%252F%2520...%250A%257D"
+                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=night-owl&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=this.clickedEvent%2520%253D%2520fromEvent(this.itemComponent.nativeElement%252C'click')%253B%250Athis.clickedEvent.subscribe(this.clickedItem.bind(this))%253B%250A%250AclickedItem()%2520%257B%250A%2520%2520%2520%2520%252F%252F%2520...%250A%2520%2520%2520%2520const%2520orderFulfilled%2520%253D%250A%2520%2520%2520%2520%2520%2520%2520%2520this.foodService.checkIsOrderFulfilled(this.name)%253B%250A%2520%2520%2520%2520%252F%252F%2520...%250A%257D"
                     class="code-block">
                 </iframe>
             </section>
 
             <section id="update-order">
                 <div style="font-size:2.5rem">
-                    3) Click events should remove food from view and update scores/orders
+                    4) Respond to click events
                 </div>
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div style="top:285px;left:260px;width:300px;height:25px" class="code-highlight">
+                        <div style="top: 190px;
+                        left: 210px;
+                        width: 350px;
+                        height: 25px;" class="code-highlight">
                         </div>
-                        <div style="top:365px;left:220px;width:300px;height:25px" class="code-highlight">
+                        <div style="top: 290px;
+                        left: 160px;
+                        width: 360px;
+                        height: 25px;" class="code-highlight">
                         </div>
                         <div class="description-text">updating the scores</div>
                     </div>
@@ -288,7 +323,10 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div style="top:345px;left:225px;width:230px;height:25px" class="code-highlight">
+                        <div style="top: 265px;
+                        left: 165px;
+                        width: 280px;
+                        height: 25px" class="code-highlight">
                         </div>
                         <div class="description-text">updating the order</div>
                     </div>
@@ -296,31 +334,25 @@
 
                 <div class="fragment fade-in">
                     <div class="fragment fade-out">
-                        <div style="top:405px;left:220px;width:550px;height:25px" class="code-highlight">
+                        <div style="top: 340px;
+                        left: 160px;
+                        width: 680px;
+                        height: 25px;" class="code-highlight">
                         </div>
-                        <div style="top:445px;left:260px;width:300px;height:25px" class="code-highlight">
+                        <div style="top: 390px;
+                        left: 210px;
+                        width: 370px;
+                        height: 25px;" class="code-highlight">
                         </div>
                         <div class="description-text">check if all orders are completed</div>
                     </div>
                 </div>
 
                 <iframe style="margin-top:120px"
-                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=one-dark&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=updateOrder(foundOrder%253A%2520Item%2520%253D%2520null)%253A%2520void%2520%257B%250A%2520%2520%2520%2520%2520if%2520(!foundOrder)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520this.score%2520-%253D%2520this.scoreUnit%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520return%253B%250A%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520foundOrder.done%2520%253D%2520true%253B%250A%2520%2520%2520%2520%2520this.score%2520%252B%253D%2520this.scoreUnit%253B%250A%250A%2520%2520%2520%2520%2520const%2520orderFulfilled%2520%253D%2520this.orders%255B0%255D.every(x%2520%253D%253E%2520x.done)%253B%250A%2520%2520%2520%2520%2520if%2520(orderFulfilled)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520this.ordersCompleted%2524.next(1)%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520this.orders.shift()%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520this.score%2520%252B%253D%2520(this.scoreUnit%2520*%25202)%253B%250A%2520%2520%2520%2520%2520%257D%250A%2520%257D"
+                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=night-owl&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=updateOrder(foundOrder%253A%2520Item%2520%253D%2520null)%253A%2520void%2520%257B%250A%2520%2520%2520%2520%2520if%2520(!foundOrder)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520this.score%2520-%253D%2520this.scoreUnit%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520return%253B%250A%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520foundOrder.done%2520%253D%2520true%253B%250A%2520%2520%2520%2520%2520this.score%2520%252B%253D%2520this.scoreUnit%253B%250A%250A%2520%2520%2520%2520%2520const%2520orderFulfilled%2520%253D%2520this.orders%255B0%255D.every(x%2520%253D%253E%2520x.done)%253B%250A%2520%2520%2520%2520%2520if%2520(orderFulfilled)%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520this.ordersCompleted%2524.next(1)%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520this.orders.shift()%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520this.score%2520%252B%253D%2520(this.scoreUnit%2520*%25202)%253B%250A%2520%2520%2520%2520%2520%257D%250A%2520%257D"
                     class="code-block">
                 </iframe>
             </section>
-
-            <!-- <section id="single-order-fulfilled">
-                <iframe id="singleOrderFulfilled"
-                    src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=material&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=const%2520singleOrderFulfilled%2524%2520%253D%2520this.foodService.ordersCompleted$.pipe(%250A%2520%2520%2520%2520tap(x%2520%253D%253E%2520this.showOrderFulfilled%2520%253D%2520true)%250A)%253B%250A%250AsingleOrderFulfilled%2524.subscribe()%253B"
-                    class="code-block">
-            </section> -->
-
-
-
-
-
-
 
             <section id="takeaways">
                 <code>import from 'rxjs'</code>
@@ -343,17 +375,20 @@
                 Thank you for listening!
                 <br>
                 <img class="image" src="https://media.tenor.com/images/d7ff43c4bad2da81dca001a9e5006273/tenor.gif">
-                <div style="font-size:2rem">
+                <div style="font-size:1.5rem">
                     <div class="mb-3">
                         Reference
                         <br>
-                        <a href="http://learnrxjs.io/">http://learnrxjs.io</a>
+                        <a href="http://learnrxjs.io/">learnrxjs.io</a>
+                    </div>
+                    <div class="mb-3">
+                        Game & source code
+                        <br>
+                        <a href="https://rxjs-playground.netlify.com">rxjs-playground.netlify.com</a>
+                        <a href="https://github.com/wendko/rxjs-playground">github.com/wendko/rxjs-playground</a>
                     </div>
                     <div>
-                        Source code
-                        <br>
-                        <a
-                            href="https://github.com/wendko/rxjs-playground">https://github.com/wendko/rxjs-playground</a>
+                        @wendko
                     </div>
                 </div>
             </section>
